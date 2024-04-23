@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MovieService } from './service/movie.service';
 import { MessageBoxComponent } from './components/message-box/message-box.component';
+import { NavBarComponent } from '../../../../../../../nav-bar/nav-bar.component';
+import { FooterComponent } from '../../../../../../../footer/footer.component';
 
 interface MovieRating {
   predicted_result: number;
@@ -30,6 +32,8 @@ interface MovieRating {
     MatButtonModule,
     MatDividerModule,
     ReactiveFormsModule,
+    NavBarComponent,
+    FooterComponent,
   ],
   templateUrl: './movie-rating.component.html',
   styleUrl: './movie-rating.component.scss',

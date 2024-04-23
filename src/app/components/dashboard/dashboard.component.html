@@ -1,1 +1,24 @@
-<p>dashboard works!</p>
+<app-nav-bar></app-nav-bar>
+<div class="grid grid-cols-4 gap-4 p-10 h-full">
+  <div
+    [routerLink]="'/iris-flower'"
+    class="border border-blue-50 flex flex-col items-center rounded-md shadow-md p-5 h-40 bg-blue-50 shadow-blue-200 cursor-pointer"
+  >
+    <h2>Iris Flower Example</h2>
+    <p class="text-center text-gray-600">
+      Deep Learning | Supervised Learning | Feed forward neural network |
+      Classification
+    </p>
+  </div>
+  <div
+    [routerLink]="'/movie-rating'"
+    class="border border-blue-50 flex flex-col items-center rounded-md shadow-md p-5 h-40 bg-blue-50 shadow-blue-200 cursor-pointer"
+  >
+    <h2>Moview Rating</h2>
+    <p class="text-center text-gray-600">
+      Deep Learning | Supervised Learning | Feed forward neural network |
+      Regression
+    </p>
+  </div>
+</div>
+<app-footer></app-footer>
