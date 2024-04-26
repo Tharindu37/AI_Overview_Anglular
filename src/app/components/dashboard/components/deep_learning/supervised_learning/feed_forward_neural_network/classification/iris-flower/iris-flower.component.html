@@ -1,1 +1,59 @@
-<p>iris-flower works!</p>
+<app-nav-bar></app-nav-bar>
+<div class="flex items-center justify-center w-full h-full border">
+  <mat-card>
+    <mat-card-content class="flex flex-col items-center">
+      <h1 class="text-center">Iris Flower</h1>
+      <form [formGroup]="flowerForm" class="flex flex-col">
+        <mat-form-field>
+          <mat-label>Sepal Length</mat-label>
+          <input
+            formControlName="sepalLength"
+            matInput
+            placeholder=""
+            value="0"
+            type="number"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Sepal Width</mat-label>
+          <input
+            formControlName="sepalWidth"
+            matInput
+            placeholder=""
+            value=""
+            type="number"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Petal Length</mat-label>
+          <input
+            formControlName="petalLength"
+            matInput
+            value=""
+            placeholder=""
+            type="number"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Petal Width</mat-label>
+          <input
+            formControlName="petalWidth"
+            matInput
+            value=""
+            placeholder=""
+            type="number"
+          />
+        </mat-form-field>
+        <button
+          [disabled]="flowerForm.invalid"
+          mat-raised-button
+          color="primary"
+          (click)="getFlowerName()"
+        >
+          Predict Name
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-footer></app-footer>
