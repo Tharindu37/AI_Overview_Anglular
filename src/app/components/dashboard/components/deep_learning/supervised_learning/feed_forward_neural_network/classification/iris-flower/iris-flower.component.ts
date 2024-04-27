@@ -16,6 +16,9 @@ import { FlowerService } from './service/flower.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MessageBoxComponent } from './components/message-box/message-box.component';
 
+interface PredictFlower {
+  predicted_result: string;
+}
 @Component({
   selector: 'app-iris-flower',
   standalone: true,
@@ -64,12 +67,14 @@ export class IrisFlowerComponent {
       petalWidth: petalWidth,
     };
 
-    this.flowerService.predictFlowerName(flower).subscribe((res: string) => {
-      this.openDialog(res);
-    });
+    this.flowerService
+      .predictFlowerName(flower)
+      .subscribe((res: PredictFlower) => {
+        this.openDialog(res);
+      });
   }
 
-  openDialog(data: string) {
+  openDialog(data: PredictFlower) {
     this.dialog.open(MessageBoxComponent, { data: data });
   }
 }

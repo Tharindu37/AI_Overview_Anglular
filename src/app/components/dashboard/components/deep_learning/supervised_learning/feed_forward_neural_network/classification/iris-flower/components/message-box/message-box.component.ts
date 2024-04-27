@@ -4,7 +4,9 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
-
+interface PredictFlower {
+  predicted_result: string;
+}
 @Component({
   selector: 'app-message-box',
   standalone: true,
@@ -13,5 +15,5 @@ import {
   styleUrl: './message-box.component.scss',
 })
 export class MessageBoxComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: string) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data: PredictFlower) {}
 }
