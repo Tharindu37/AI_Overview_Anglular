@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<div class="flex items-center justify-center w-full min-h-[95vh]">
+  <div class="flex flex-col w-2/5 gap-1 p-1 border rounded-md">
+    <div class="flex flex-col justify-center w-full p-5 bg-blue-100 rounded-md">
+      <label for="image" class="text-gray-600">Select Image (Cat or Dog)</label>
+      <input
+        (change)="onFileSelected($event)"
+        accept="image/"
+        id="image"
+        class="p-2 bg-blue-300 rounded-md"
+        type="file"
+      />
+    </div>
+    <div class="w-full overflow-hidden rounded-md">
+      <img [@fadeInOut] class="w-full" [src]="imageUrl" />
+    </div>
+    <div class="p-1 border rounded-md">
+      <div class="flex justify-center">
+        <h4 class="text-gray-500">Predict whether it's a cat or a dog.</h4>
+      </div>
+      <div class="flex justify-center p-1">
+        <button
+          (click)="predict()"
+          class="px-3 py-2 font-bold bg-blue-300 rounded-md"
+        >
+          Predict
+        </button>
+      </div>
+      @if (result) {
+      <div class="flex justify-center">
+        <h1
+          class="w-full px-5 py-1 text-center text-gray-900 bg-green-200 rounded-md"
+        >
+          {{ result }}
+        </h1>
+      </div>
+      }
+    </div>
+  </div>
+</div>
